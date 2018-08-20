@@ -1,6 +1,6 @@
 {
   "name": "eps-brain-games",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Mini brain games for Hexlet",
   "main": "index.js",
   "scripts": {
@@ -24,5 +24,14 @@
   "bugs": {
     "url": "https://github.com/EPSNV/project-lvl1-s328/issues"
   },
-  "homepage": "https://github.com/EPSNV/project-lvl1-s328#readme"
+  "homepage": "https://github.com/EPSNV/project-lvl1-s328#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1"
+  }
 }
