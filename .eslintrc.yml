@@ -6,4 +6,6 @@
 
  env:
    node: true
+
+ parser: babel-eslint
  

@@ -1,5 +1,8 @@
 import readlineSync from 'readline-sync';
 import { cons, car, cdr } from 'hexlet-pairs';
+import generateEven from './games/even';
+import generateCalc from './games/calc';
+import generateGcd from './games/gcd';
 
 export const hello = (description = '') => {
   console.log('Welcome to the Brain Games!');
@@ -9,49 +12,15 @@ export const hello = (description = '') => {
   return name;
 };
 
-const isEven = number => number % 2 === 0 ? 'yes' : 'no';
-const checkGCD = (a, b) => {
-  let i = (a < b) ? a : b;
-  while (i > 0) {
-    if ((a % i === 0) && (b % i === 0)) return i;
-    i -= 1;
-  }
-  return NaN;
-};
-const random = (maxNumber = 100) => Math.floor(Math.random() * maxNumber);
+export const random = (min = 0, max = 100) => Math.floor(Math.random() * (max - min)) + min;
 
-const makeQuestionAnswer = (question, answer) => cons(question, answer);
+export const makeQuestionAnswer = (question, answer) => cons(question, answer);
 const getQuestion = questionAnswer => car(questionAnswer);
 const getAnswer = questionAnswer => cdr(questionAnswer);
 
-const generateEven = () => {
-  const argument = random();
-  return makeQuestionAnswer(argument, isEven(argument));
-};
-
-const generateCalc = () => {
-  const firstArgument = random();
-  const secondArgument = random();
-  const sign = random(3);
-  switch (sign) { // вот тут мне не нравится, но пока не придумал как упростить.
-    case 0: return makeQuestionAnswer(`${firstArgument}+${secondArgument}`, `${firstArgument + secondArgument}`);
-    case 1: return makeQuestionAnswer(`${firstArgument}-${secondArgument}`, `${firstArgument - secondArgument}`);
-    case 2: return makeQuestionAnswer(`${firstArgument}*${secondArgument}`, `${firstArgument * secondArgument}`);
-    default: return undefined;
-  }
-};
-
-const generateGcd = () => {
-  const firstArgument = random() + 1;
-  const secondArgument = random() + 1;
-  const greatCommonDivisor = checkGCD(firstArgument, secondArgument);
-  return makeQuestionAnswer(`${firstArgument} ${secondArgument}`, `${greatCommonDivisor}`);
-};
-
-
-export const Game = (numberRightAnswer, questionAnswerGenerator, description) => {
+export const Game = (questionAnswerGenerator, description) => {
   const name = hello(description);
-  for (let i = numberRightAnswer; i > 0;) {
+  for (let i = 3; i > 0;) {
     const questionAnswer = questionAnswerGenerator();
     const question = getQuestion(questionAnswer);
     const rightAnswer = getAnswer(questionAnswer);
@@ -63,40 +32,12 @@ export const Game = (numberRightAnswer, questionAnswerGenerator, description) =>
       i -= 1;
     } else {
       console.log(`${answer} is wrong answer ;(. Correct answer was ${rightAnswer}.`);
-      console.log(`Let's try again, ${name}!`);
+      return `Let's try again, ${name}!`;
     }
   }
-  console.log(`Congratulations, ${name}!`);
+  return `Congratulations, ${name}!`;
 };
 
-export const even = () => Game(3, generateEven, 'Answer "yes" if number even otherwise answer "no".');
-export const calc = () => Game(3, generateCalc, 'What is the result of the expression?');
-export const gcd = () => Game(3, generateGcd, 'Find the greatest common divisor of given numbers');
-
-/*
-Легкая наркомания :) Пытался через пары создать сущность, которая будет содержать
-два числа, знак и методы для обработки всего этого под цели игры Калькулятор.
-const makeCalcArguments = (firstArgument, secondArgument) => cons(firstArgument, secondArgument);
-const getFirstArgument = calcArguments => car(calcArguments);
-const getSecondArgument = calcArguments => cdr(calcArguments);
-const sumCalcArguments = calcArguments => car(calcArguments) + cdr(calcArguments);
-const subCalcArguments = calcArguments => car(calcArguments) - cdr(calcArguments);
-const multCalcArguments = calcArguments => car(calcArguments) * cdr(calcArguments);
-
-const makeCalc = (sign, calcArguments) => cons(sign, calcArguments);
-const getSign = calc => car(calc);
-const getCalcArguments = calc => cdr(calc);
-const calculate = (calc) => {
-  switch(getSign(calc)) {
-    case '+': return sumCalcArguments(getCalcArguments(calc));
-    case '-': return subCalcArguments(getCalcArguments(calc));
-    case '*': return multCalcArguments(getCalcArguments(calc));
-    default: return undefined;
-  }
- const calcToString = calc => {
-   firstArgument = getFirstArgument(getCalcArguments(calc));
-   secondArgument = getSecondArgument(getCalcArguments(calc));
-   sign = (getSign(calc));
-   return `${firstArgument}${sign}${secondArgument}`
-};
-*/
+export const even = () => console.log(Game(generateEven, 'Answer "yes" if number even otherwise answer "no".'));
+export const calc = () => console.log(Game(generateCalc, 'What is the result of the expression?'));
+export const gcd = () => console.log(Game(generateGcd, 'Find the greatest common divisor of given numbers'));
