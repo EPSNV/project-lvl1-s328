@@ -33,7 +33,6 @@ const generateCalc = () => {
   const firstArgument = random();
   const secondArgument = random();
   const sign = random(3);
-  console.log(sign);
   switch (sign) { // вот тут мне не нравится, но пока не придумал как упростить.
     case 0: return makeQuestionAnswer(`${firstArgument}+${secondArgument}`, `${firstArgument + secondArgument}`);
     case 1: return makeQuestionAnswer(`${firstArgument}-${secondArgument}`, `${firstArgument - secondArgument}`);
