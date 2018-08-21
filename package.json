@@ -1,6 +1,6 @@
 {
   "name": "eps-brain-games",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Mini brain games for Hexlet",
   "keywords": [
     "brain",
@@ -19,7 +19,8 @@
   ],
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
   },
   "homepage": "https://github.com/EPSNV/project-lvl1-s328#readme",
   "dependencies": {
+    "hexlet-pairs": "^1.0.8",
     "readline-sync": "^1.4.9"
   },
   "devDependencies": {
