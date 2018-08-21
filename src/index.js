@@ -10,6 +10,14 @@ export const hello = (description = '') => {
 };
 
 const isEven = number => number % 2 === 0 ? 'yes' : 'no';
+const checkGCD = (a, b) => {
+  let i = (a < b) ? a : b;
+  while (i > 0) {
+    if ((a % i === 0) && (b % i === 0)) return i;
+    i -= 1;
+  }
+  return NaN;
+};
 const random = (maxNumber = 100) => Math.floor(Math.random() * maxNumber);
 
 const makeQuestionAnswer = (question, answer) => cons(question, answer);
@@ -34,6 +42,14 @@ const generateCalc = () => {
   }
 };
 
+const generateGcd = () => {
+  const firstArgument = random() + 1;
+  const secondArgument = random() + 1;
+  const greatCommonDivisor = checkGCD(firstArgument, secondArgument);
+  return makeQuestionAnswer(`${firstArgument} ${secondArgument}`, `${greatCommonDivisor}`);
+};
+
+
 export const Game = (numberRightAnswer, questionAnswerGenerator, description) => {
   const name = hello(description);
   for (let i = numberRightAnswer; i > 0;) {
@@ -56,6 +72,7 @@ export const Game = (numberRightAnswer, questionAnswerGenerator, description) =>
 
 export const even = () => Game(3, generateEven, 'Answer "yes" if number even otherwise answer "no".');
 export const calc = () => Game(3, generateCalc, 'What is the result of the expression?');
+export const gcd = () => Game(3, generateGcd, 'Find the greatest common divisor of given numbers');
 
 /*
 Легкая наркомания :) Пытался через пары создать сущность, которая будет содержать
