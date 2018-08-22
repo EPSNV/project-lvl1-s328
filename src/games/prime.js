@@ -13,7 +13,7 @@ const isPrime = (number) => {
 };
 
 const generate = () => {
-  const question = random(2, 5);
+  const question = random(2, 100);
   const answer = isPrime(question) ? 'yes' : 'no';
   return cons(question, answer);
 };

@@ -12,6 +12,14 @@
 ### Brain - Balance
 [![asciicast](https://asciinema.org/a/ay2eOeKqnfiq3em9SkRlsLvuw.png)](https://asciinema.org/a/ay2eOeKqnfiq3em9SkRlsLvuw?autoplay=1&speed=2&loop=1)
 
+### Brain - Progression
+[![asciicast](https://asciinema.org/a/FO1lZwIpKFlXM7QA1T00ZGcWR.png)](https://asciinema.org/a/FO1lZwIpKFlXM7QA1T00ZGcWR?autoplay=1&speed=2&loop=1)
+
+### Brain - Prime
+[![asciicast](https://asciinema.org/a/rqh99cVxy8HkmodbIBhIliMzA.png)](https://asciinema.org/a/rqh99cVxy8HkmodbIBhIliMzA?autoplay=1&speed=2&loop=1)
+
+
+
 
 [![Build Status](https://travis-ci.org/EPSNV/project-lvl1-s328.svg?branch=master)](https://travis-ci.org/EPSNV/project-lvl1-s328)
 
