@@ -1,4 +1,6 @@
-import { random, makeQuestionAnswer, game } from '..';
+import random from '../utils';
+import { cons } from 'hexlet-pairs';
+import game from '..';
 
 const sumDigits = (num) => {
   const str = String(num);
@@ -20,7 +22,7 @@ const theEqualizer = (sum, len, acc) => {
 const generate = () => {
   const argument = random(100, 9999);
   const balancedNumber = theEqualizer(sumDigits(argument), String(argument).length, '');
-  return makeQuestionAnswer(`${argument}`, `${balancedNumber}`);
+  return cons(`${argument}`, `${balancedNumber}`);
 };
 
 export default () => game(generate, 'Balance the given number');

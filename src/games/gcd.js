@@ -1,4 +1,7 @@
-import { random, makeQuestionAnswer, game } from '..';
+import random from '../utils';
+import { cons } from 'hexlet-pairs';
+import game from '..';
+
 
 const checkGCD = (a, b) => {
   let i = (a < b) ? a : b;
@@ -12,7 +15,7 @@ const generate = () => {
   const firstArgument = random(2, 100);
   const secondArgument = random(2, 100);
   const greatCommonDivisor = checkGCD(firstArgument, secondArgument);
-  return makeQuestionAnswer(`${firstArgument} ${secondArgument}`, `${greatCommonDivisor}`);
+  return cons(`${firstArgument} ${secondArgument}`, `${greatCommonDivisor}`);
 };
 
 export default () => game(generate, 'Find the greatest common divisor of given numbers');
