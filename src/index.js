@@ -1,8 +1,5 @@
 import readlineSync from 'readline-sync';
 import { cons, car, cdr } from 'hexlet-pairs';
-import generateEven from './games/even';
-import generateCalc from './games/calc';
-import generateGcd from './games/gcd';
 
 export const hello = (description = '') => {
   console.log('Welcome to the Brain Games!');
@@ -18,9 +15,11 @@ export const makeQuestionAnswer = (question, answer) => cons(question, answer);
 const getQuestion = questionAnswer => car(questionAnswer);
 const getAnswer = questionAnswer => cdr(questionAnswer);
 
-export const Game = (questionAnswerGenerator, description) => {
+export const game = (questionAnswerGenerator, description) => {
   const name = hello(description);
-  for (let i = 3; i > 0;) {
+  const numberRightAnswer = 3;
+  let i = 0;
+  while (i < numberRightAnswer) {
     const questionAnswer = questionAnswerGenerator();
     const question = getQuestion(questionAnswer);
     const rightAnswer = getAnswer(questionAnswer);
@@ -29,15 +28,12 @@ export const Game = (questionAnswerGenerator, description) => {
 
     if (answer === rightAnswer) {
       console.log('Correct!');
-      i -= 1;
+      i += 1;
     } else {
       console.log(`${answer} is wrong answer ;(. Correct answer was ${rightAnswer}.`);
-      return `Let's try again, ${name}!`;
+      console.log(`Let's try again, ${name}!`);
+      return;
     }
   }
-  return `Congratulations, ${name}!`;
+  console.log(`Congratulations, ${name}!`);
 };
-
-export const even = () => console.log(Game(generateEven, 'Answer "yes" if number even otherwise answer "no".'));
-export const calc = () => console.log(Game(generateCalc, 'What is the result of the expression?'));
-export const gcd = () => console.log(Game(generateGcd, 'Find the greatest common divisor of given numbers'));

@@ -1,6 +1,6 @@
-import { random, makeQuestionAnswer } from '..';
+import { random, makeQuestionAnswer, game } from '..';
 
-export default () => {
+const generate = () => {
   const firstArgument = random();
   const secondArgument = random();
   const sign = random(0, 3);
@@ -11,3 +11,5 @@ export default () => {
     default: return undefined;
   }
 };
+
+export default () => game(generate, 'What is the result of the expression?');

@@ -1,4 +1,4 @@
-import { random, makeQuestionAnswer } from '..';
+import { random, makeQuestionAnswer, game } from '..';
 
 const checkGCD = (a, b) => {
   let i = (a < b) ? a : b;
@@ -8,9 +8,11 @@ const checkGCD = (a, b) => {
   }
   return i;
 };
-export default () => {
+const generate = () => {
   const firstArgument = random(2, 100);
   const secondArgument = random(2, 100);
   const greatCommonDivisor = checkGCD(firstArgument, secondArgument);
   return makeQuestionAnswer(`${firstArgument} ${secondArgument}`, `${greatCommonDivisor}`);
 };
+
+export default () => game(generate, 'Find the greatest common divisor of given numbers');
