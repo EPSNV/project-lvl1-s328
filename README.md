@@ -1,5 +1,27 @@
 # eps-brain-games
 
+## Description 
+Mini console games. 
+
+## Install
+
+sudo npm install -g eps-brain-games
+
+## Run
+
+brain-even
+
+brain-calc
+
+brain-gcd
+
+brain-balance
+
+brain-progression
+
+brain-prime
+
+
 ### Brain - Even
 [![asciicast](https://asciinema.org/a/jm7iOjQ78LQXX3rYrdz2q319T.png)](https://asciinema.org/a/jm7iOjQ78LQXX3rYrdz2q319T?autoplay=1&speed=2&loop=1)
 
