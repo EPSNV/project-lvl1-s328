@@ -7,8 +7,7 @@ export default (questionAnswerGenerator, description) => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   const numberRightAnswer = 3;
-  let i = 0;
-  while (i < numberRightAnswer) {
+  for (let i = 0; i < numberRightAnswer; i += 1) {
     const questionAnswer = questionAnswerGenerator();
     const question = car(questionAnswer);
     const rightAnswer = cdr(questionAnswer);
@@ -17,7 +16,6 @@ export default (questionAnswerGenerator, description) => {
 
     if (answer === rightAnswer) {
       console.log('Correct!');
-      i += 1;
     } else {
       console.log(`${answer} is wrong answer ;(. Correct answer was ${rightAnswer}.`);
       console.log(`Let's try again, ${name}!`);
