@@ -1,14 +1,6 @@
 import readlineSync from 'readline-sync';
 import { cons, car, cdr } from 'hexlet-pairs';
 
-export const hello = (description = '') => {
-  console.log('Welcome to the Brain Games!');
-  console.log(description);
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-  return name;
-};
-
 export const random = (min = 0, max = 100) => Math.floor(Math.random() * (max - min)) + min;
 
 export const makeQuestionAnswer = (question, answer) => cons(question, answer);
@@ -16,7 +8,10 @@ const getQuestion = questionAnswer => car(questionAnswer);
 const getAnswer = questionAnswer => cdr(questionAnswer);
 
 export const game = (questionAnswerGenerator, description) => {
-  const name = hello(description);
+  console.log('Welcome to the Brain Games!');
+  console.log(description);
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
   const numberRightAnswer = 3;
   let i = 0;
   while (i < numberRightAnswer) {
