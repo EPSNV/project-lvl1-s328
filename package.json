@@ -18,6 +18,7 @@
     "dist"
   ],
   "bin": {
+    "brain-prime": "dist/bin/brain-prime.js",
     "brain-progression": "dist/bin/brain-progression.js",
     "brain-balance": "dist/bin/brain-balance.js",
     "brain-games": "dist/bin/brain-games.js",
