@@ -9,6 +9,8 @@ sudo npm install -g eps-brain-games
 
 ## Run
 
+brain-games 
+
 brain-even
 
 brain-calc
@@ -20,6 +22,9 @@ brain-balance
 brain-progression
 
 brain-prime
+
+### Brain - Games
+[![asciicast](https://asciinema.org/a/BPxcF48ZrnfiQBiXvjqxaNeDd.png)](https://asciinema.org/a/BPxcF48ZrnfiQBiXvjqxaNeDd?autoplay=1&speed=2&loop=1)
 
 
 ### Brain - Even
