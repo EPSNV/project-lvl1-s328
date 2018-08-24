@@ -2,7 +2,6 @@ import random from '../utils';
 import { cons } from 'hexlet-pairs';
 import game from '..';
 
-
 const isEven = number => number % 2 === 0;
 
 const generate = () => {

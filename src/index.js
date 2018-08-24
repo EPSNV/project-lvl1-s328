@@ -16,7 +16,7 @@ export default (questionAnswerGenerator, description) => {
     const questionAnswer = questionAnswerGenerator();
     const question = car(questionAnswer);
     const rightAnswer = cdr(questionAnswer);
-    console.log(`Questions ${question}`);
+    console.log(yellow('Questions'), `${question}`);
     const answer = readlineSync.question('Your answer: ');
 
     if (answer === rightAnswer) {

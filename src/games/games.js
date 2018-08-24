@@ -1,6 +1,4 @@
-import {
-  red, inverse, green, yellow, bold,
-} from 'colors';
+import { red, inverse, yellow } from 'colors';
 import readlineSync from 'readline-sync';
 import balance from './balance';
 import even from './even';
@@ -62,8 +60,6 @@ const chooseGame = () => {
 
 export default () => {
   console.log(inverse('Welcome to the Brain Games!\n'));
-  const name = bold(readlineSync.question('May I have your name? \n'));
-  console.log(green(`\nHello, ${name}!\n`));
   chooseGame();
-  console.log(red(`\nGoodbye, ${name}! I'll be back ;). \n`));
+  console.log(red('\nGoodbye! See you soon ;). \n'));
 };
