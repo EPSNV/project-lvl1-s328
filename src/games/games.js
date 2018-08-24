@@ -8,6 +8,7 @@ import calc from './calc';
 import gcd from './gcd';
 import progression from './progression';
 import prime from './prime';
+import hexletTest from './hexlet-test';
 
 const chooseGame = () => {
   console.log(yellow('Choose game:\n'));
@@ -17,8 +18,9 @@ const chooseGame = () => {
   console.log('  4. Balance');
   console.log('  5. Progression');
   console.log('  6. Prime');
+  console.log('  7. Hexlet-test');
   console.log('  Q. Exit \n');
-  const gameChoose = readlineSync.question(yellow('Type 1-6 for play or Q for Exit\n'));
+  const gameChoose = readlineSync.question(yellow('Type 1-7 for play or Q for Exit\n'));
   switch (gameChoose) {
     case '1': {
       even();
@@ -42,6 +44,10 @@ const chooseGame = () => {
     }
     case '6': {
       prime();
+      break;
+    }
+    case '7': {
+      hexletTest();
       break;
     }
     case 'Q': {
